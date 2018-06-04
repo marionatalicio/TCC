@@ -1,5 +1,9 @@
 <?php 
-include 'cabecalho.html';
+  include 'cabecalho.html';
+  if(!isset ($_SESSION['usuario_online']))
+{
+    header('location:index.php');
+    }
   ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -70,9 +74,9 @@ include 'cabecalho.html';
             <div class="background">
         <img src="../../assets/image/esteto.jpg">
       </div>
-      <a href="perfil.php"><img class="circle" src="../../assets/image/perfil.jpg"></a>
-      <a href="perfil.php"><span class="white-text name"><?php= $id; ?></span></a>
-      <a href="perfil.php"><span class="white-text email">mario.natalicio2@gmail.com</span></a>
+      <a href="../visao/perfil.php"><img class="circle" src="../../assets/image/perfil.jpg"></a>
+      <!--<a href="perfil.php"><span class="white-text name"></span></a>-->
+      <a href="../visao/perfil.php"><span class="white-text email">mario.natalicio2@gmail.com</span></a>
     </div></li>
         <li class="search">
           <div class="search-wrapper card">
@@ -134,7 +138,7 @@ include 'cabecalho.html';
       <div class="row">
       	<div class="col s3"></div>
         <div class="col s6 m6 ">
-          <h2 class="header">Vagas Disponíveis</h2>
+          <h2 class="header"><?php echo $_SESSION['nome']; ?></h2>
           <div class="row">
         <div class="col ">
           <div class="card medium">

@@ -21,7 +21,7 @@ function cadastrar_candidato(){
 	$candidato = new Candidato($_POST['nome'], $_POST['data'],$_POST['RG'],$_POST['CPF'],$_POST['telefone_1'],$_POST['telefone_2'],$_POST['cidade'],$_POST['estado'],$_POST['bairro'],$_POST['rua'],$_POST['numero'],$_POST['cep'],$_POST['email'],$_POST['imagem'],$_POST['login'],$_POST['senha-1'],$periodo);
 	$crudc_c = new crud_Candidato();
 	$crudc_c->criar($candidato);
-	include '../visao/perfil.php';
+	header('Location: ../../index.php');
 }
 
 function listar_candidatos() {
@@ -47,11 +47,16 @@ function verificar_candidato(){
         //colar aqui o if
         if ($login == $listaCandidatos['login'] AND $senha == $listaCandidatos['senha'] ) {
             $usuario_existe = true;
+           	session_start();
+            $_SESSION = $listaCandidatos;
+            
+
             //deu certo;
-            //$_SESSION['usuario_nome']   = $_POST['nome'];
-            //$_SESSION['usuario_login']  = $login;
-            //$_SESSION['usuario_senha']  = $senha;
-            //$_SESSION['usuario_online'] = true;
+            //$_SESSION['usuario_nome']   = $listaCandidatos['login'];
+            //$_SESSION['usuario_login']  = $listaCandidatos['login'];
+            //$_SESSION['usuario_senha']  = $listaCandidatos['senha'];
+            //$_SESSION['usuario_id']	    = $listaCandidatos['id_candidato'];
+            $_SESSION['usuario_online'] = true;
 
             //redirecionar
             

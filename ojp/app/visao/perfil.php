@@ -1,5 +1,6 @@
 <?php 
 include 'cabecalho.html';
+
   ?>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
         	<style type="text/css">
@@ -60,7 +61,7 @@ include 'cabecalho.html';
 
 </div>
 <div class="col s10">
-<h1><? echo $listaCandidato['login']; ?></h1>
+<h1><? echo $_SESSION['nome']; ?></h1>
   </div>
 </div>
   <hr>

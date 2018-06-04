@@ -1,22 +1,23 @@
 <?php
 	class Candidato {
-		public $nome		;
-		public $data		;
-		public $rg			;
-		public $cpf			;
-		public $tel_1		;
-		public $tel_2		;
-		public $cidade		;
-		public $estado		;
-		public $bairro		;
-		public $rua			;
-		public $numero		;
-		public $cep			;
-		public $email		;
-		public $img			;
-		public $login		;
-		public $senha		;
-		public $periodo		;
+		public $nome	;
+		public $data	;
+		public $rg		;
+		public $cpf		;
+		public $tel_1	;
+		public $tel_2	;
+		public $cidade	;
+		public $estado	;
+		public $bairro	;
+		public $rua		;
+		public $numero	;
+		public $cep		;
+		public $email	;
+		public $img		;
+		public $login	;
+		public $senha	;
+		public $periodo	;
+		public $id	;
 
 		function __construct($nome,$data,$rg,$cpf,$tel_1,$tel_2,$cidade,$estado,$bairro,$rua,$numero,$cep,$email,$img,$login,$senha,$periodo, $id = null)
 		{
@@ -42,7 +43,7 @@
 		public function getId(){
         	return $this->id;
     	}
-    	
+
     	public function setId($id){
         	$this->id = $id;
     	}

@@ -137,7 +137,7 @@
     <div class="parallax"><img src="assets/image/Fot.jpg" alt="Unsplashed background img 3"></div>
   </div>
 
-<?php include __DIR__.'assets/rodape.html'; ?>
+<?php include 'assets/rodape.html'; ?>
 
 
   
