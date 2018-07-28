@@ -1,5 +1,4 @@
 <?php 
-  include 'cabecalho.html';
   if(!isset ($_SESSION['usuario_online']))
 {
     header('location:index.php');
@@ -40,7 +39,8 @@
 	<div class="navbar-fixed">
   <nav class="blue-grey nav-wrapper" role="navigation">
     <div class="nav-wrapper container ">
-      <a id="logo-container" href="index.php" class="brand-logo center white-text">OJP</a>
+      <a href="../visao/login_candidato.php"><i class="material-icons prefix left">arrow_back</i>Voltar</a>
+      <a id="logo-container" href="../../index.php" class="brand-logo center white-text">OJP</a>
       <ul class="right hide-on-med-and-down">
 		<li><a href="#"></a></li>
         <!--<li><a class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped pulse" data-tooltip="Menu"><i class="material-icons " data-activates="nav-mobile">menu</i></a><a href="#" class="waves-effect waves-light btn-floating"><i class="material-icons left">add</i></a></li>!-->
@@ -74,9 +74,9 @@
             <div class="background">
         <img src="../../assets/image/esteto.jpg">
       </div>
-      <a href="../visao/perfil.php"><img class="circle" src="../../assets/image/perfil.jpg"></a>
+      <a href="controlador_candidato.php?acao=listar_candidato&id=<?=$_SESSION['id_candidato']?>"><img class="circle" src="../../assets/image/perfil.jpg"></a>
       <!--<a href="perfil.php"><span class="white-text name"></span></a>-->
-      <a href="../visao/perfil.php"><span class="white-text email">mario.natalicio2@gmail.com</span></a>
+      <a href="controlador_candidato.php?acao=listar_candidato&id=<?=$_SESSION['id_candidato']?>"><span class="white-text email">mario.natalicio2@gmail.com</span></a>
     </div></li>
         <li class="search">
           <div class="search-wrapper card">
@@ -138,7 +138,7 @@
       <div class="row">
       	<div class="col s3"></div>
         <div class="col s6 m6 ">
-          <h2 class="header"><?php echo $_SESSION['nome']; ?></h2>
+          <h2 class="header"><?php //echo $_SESSION['estado']; ?></h2>
           <div class="row">
         <div class="col ">
           <div class="card medium">

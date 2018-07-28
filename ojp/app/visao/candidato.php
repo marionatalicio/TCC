@@ -1,4 +1,3 @@
-<?php include 'cabecalho.html'; ?>
       <style type="text/css">
       	body {
 				    background-image: url("../../assets/image/cadastro.jpg");
@@ -14,7 +13,7 @@
           <div class="navbar-fixed">
   <nav class="blue-grey nav-wrapper" role="navigation">
     <div class="nav-wrapper container ">
-    	<a href="index.php"><i class="material-icons prefix left">arrow_back</i>Voltar</a>
+    	<a href="../../index.php"><i class="material-icons prefix left">arrow_back</i>Voltar</a>
       <a id="logo-container" href="index.php" class="brand-logo center white-text">OJP</a>
       <ul class="right hide-on-med-and-down">
 		<li><a href="#"></a></li>
@@ -67,28 +66,33 @@
                 <label for="first_name" class="white-text">CPF</label>
               </div>
               <div class="input-field col s6">
+                <input  id="first_name" name="carteira" type="text" class="validate white-text">
+                <label for="first_name" class="white-text">Carteira de Trabalho</label>
+              </div>  
+              <div class="input-field col s6">
                 <input  id="first_name" name="telefone_1" type="text" class="validate white-text">
-                <label for="first_name" class="white-text">telefone(1)</label>
+                <label for="first_name" class="white-text">Celular</label>
               </div>
     	        <div class="input-field col s6">
                 <input  id="first_name" name="telefone_2" type="text" class="validate white-text">
-                <label for="first_name" class="white-text">telefone(2)</label>
+                <label for="first_name" class="white-text">Telefone</label>
               </div>
-               
-              <div class="input-field col s6">
+              <!--<div class="input-field col s6">
                 <input  id="first_name" name="cidade" type="text" class="validate white-text">
                 <label for="first_name" class="white-text">Cidade</label>
-              </div>
+              </div>-->
 			  <div class="input-field col s6">
 			    <select class="white-text"
-           name="estado">
+           name="cidades">
 			      <option value=""  class="white-text">Selecione a cidade em que você busca emprego</option>
 
-				    <option value="ara">Araquari</option> 
-				    <option value="joi">Joinville</option> 
-				    <option value="sfs">São Francisco do Sul</option> 
+				    <option value="Araquari">Araquari</option> 
+            <option value="Joinville">Joinville</option> 
+				    <option value="São Francisco do Sul">São Francisco do Sul</option>
+            <option value="Barra do Sul">Barra do Sul</option>
+            <option value="Barra Velha">Barra Velha</option>
 			    </select>
-			    <label>Estado</label>
+			    <label>Cidades</label>
 			  </div>
               <div class="input-field col s6">
                 <input  id="first_name" name="bairro" type="text" class="validate white-text">
@@ -106,28 +110,37 @@
                 <input  id="first_name" name="cep" type="text" class="validate white-text">
                 <label for="first_name" class="white-text">CEP</label>
               </div>
-              <div class="input-field col s6">
-                <input  id="first_name" name="email" type="email" class="validate white-text">
-                <label for="first_name" class="white-text">E-mail</label>
-              </div>
               <div class="file-field input-field col s6">
-			      <div class="btn">
-			        <span>Escolha Sua Imagem</span>
+			      <div class="btn blue-grey">
+			        <span>Imagem de Perfil</span>
 			        <input name="bt_imagem" type="file">
 			      </div>
 			      <div class="file-path-wrapper">
 			        <input class="file-path validate white-text" name="imagem" type="text">
 			      </div>
 			    </div>
+          <div class="file-field input-field col s6">
+          <div class="btn blue-grey">
+              <span>Anexo do Currículo</span>
+              <input name="bt_anexo" type="file">
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate white-text" name="anexo" type="text">
+            </div>
+          </div>
+              <div class="input-field col s6">
+                <input  id="first_name" name="email" type="email" class="validate white-text">
+                <label for="first_name" class="white-text">E-mail</label>
+              </div>
               <div class="input-field col s6">
                 <input  id="first_name" name="login" type="text" class="validate white-text">
                 <label for="first_name" class="white-text">Login do usuário</label>
               </div>
-              <div class="input-field col s3">
+              <div class="input-field col s6">
                 <input  id="first_name" name="senha-1" type="password" class="validate white-text">
-                <label for="first_name" class="white-text">senha</label>
+                <label for="first_name" class="white-text">Senha</label>
               </div>
-              <div class="input-field col s3">
+              <div class="input-field col s6">
                 <input  id="first_name" name="senha-2" type="password" class="validate white-text">
                 <label for="first_name" class="white-text">Confirme a senha</label>
               </div>
@@ -156,17 +169,16 @@
               <span class="card-title">Termos de Uso</span>
               <p class="white-text-text">Para continuar você precisa aceitar os termos de uso  do aplicativo mesmo nâo tendo cosciência.</p>
               <input name="" type="checkbox" class="filled-in" id="filled-in-box" checked="checked" />
-      <label for="filled-in-box">Concordo com os termos de uso</label>
+              <label for="filled-in-box">Concordo com os termos de uso</label>
             </div>
             <div class="card-action">
               <a href="empresa.php"><p>Sou Empresa</p></a>
-              <button class="btn waves-effect waves-light" name="" type="submit" name="action">Submit
-    <i class="material-icons right">send</i>
-  </button>
+              <button class="btn waves-effect blue-grey" name="" type="submit" name="action">Submit
+              <i class="material-icons right">send</i>
+              </button>
                     <!--<a id="botao" class="btn btn-floating btn-large cyan accent-2 pulse halfway-fab tooltipped" href="funcional.php" data-tooltip="enviar"><i class="material-icons">send</i></a>-->
             </div>
             </form>
-
           </div>
         </div>
       </div>

@@ -1,4 +1,9 @@
-<?php include __DIR__.'/../cabecalho.html'; ?>
+<?php 
+if(!isset ($_SESSION['usuario_online']))
+{
+    header('location:index.php');
+    }
+?>
 <style type="text/css">
 	.parallax-container {
 		height: 600px;
@@ -54,9 +59,9 @@
 		<div class="background">
 			<img src="../../assets/image/esteto.jpg">
 		</div>
-		<a href="perfil.php"><img class="circle" src="../../assets/image/apple-logo.png"></a>
-		<a href="perfil.php"><span class="white-text name">Apple</span></a>
-		<a href="perfil.php"><span class="white-text email">apple@gmail.com</span></a>
+		<a href="controlador_empresa.php?acao=listar_empresa&id=<?=$_SESSION['id_empregador']?>"><img class="circle" src="../../assets/image/apple-logo.png"></a>
+		<a href="controlador_empresa.php?acao=listar_empresa&id=<?=$_SESSION['id_empregador']?>"><span class="white-text name"><?=$_SESSION['nome_empresa'] ?></span></a>
+		<a href="controlador_empresa.php?acao=listar_empresa&id=<?=$_SESSION['id_empregador']?>"><span class="white-text email"><?=$_SESSION['email_empresa'] ?></span></a>
 	</div></li>
 	<li class="search">
           <!--<div class="search-wrapper card">
@@ -64,7 +69,7 @@
             <div class="search-results"></div>
         </div>-->
     </div>
-    <div></li><a class="btn-floating btn-large waves-effect waves-light tooltipped red" data-tooltip="Cadastrar vaga" data-position="right" href="vagas.php"><i class="material-icons">add</i></a></div>
+    <div></li><a class="btn-floating btn-large waves-effect waves-light tooltipped red" data-tooltip="Cadastrar vaga" data-position="right" href="controlador_empresa.php?acao=pagina_cadastrarVaga"><i class="material-icons">add</i></a></div>
     <li class="bold"><a href="index.php" class="waves-effect waves-teal">Home</a></li>
     <li class="no-padding">
     	<ul class="collapsible collapsible-accordion">

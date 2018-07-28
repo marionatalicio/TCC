@@ -1,5 +1,5 @@
 <?php 
-include 'cabecalho.html';
+include '../../assets/cabecalho.html';
   ?>
       <style type="text/css">
         body{ 
@@ -32,7 +32,7 @@ include 'cabecalho.html';
         <div class="navbar-fixed">
   <nav class="blue-grey nav-wrapper" role="navigation">
     <div class="nav-wrapper container ">
-      <a href="index.html"><i class="material-icons prefix left">arrow_back</i>Voltar</a>
+      <a href="../../index.php"><i class="material-icons prefix left">arrow_back</i>Voltar</a>
       <a id="logo-container" href="index.html" class="brand-logo center white-text">OJP</a>
       <ul class="right hide-on-med-and-down">
     <li><a href="#"></a></li>

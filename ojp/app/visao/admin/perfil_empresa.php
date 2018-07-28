@@ -1,6 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>OJP/home</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="../../../assets/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="../../../assets/css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
 <?php 
-include '../../assets/cabecalho.html';
+
 session_start();
+$id = $_SESSION['id_empregador'];
 
   ?>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
@@ -62,17 +74,17 @@ session_start();
 
 </div>
 <div class="col s10">
-<h1><?= $_SESSION['nome'] ?></h1>
+<h1><?= $_SESSION['nome_empresa'] ?></h1>
   </div>
 </div>
   <hr>
-  <h3>Dados Pessoais</h3>
-  <h5>E-mail: <?= $_SESSION['email'] ?></h5>
-  <h5>Celular: <?= $_SESSION['tel_1'] ?></h5>
-  <h5>Telefone: <?= $_SESSION['tel_2'] ?></h5>
+  <h3>Dados Empresariais</h3>
+  <h5>Razão Social: <?= $_SESSION['razao_social'] ?></h5>
+  <h5>E-mail: <?= $_SESSION['email_empresa'] ?></h5>
+  <h5>Telefone: <?= $_SESSION['telefone'] ?></h5>
   <h5>Data de nascimento: <?=  $_SESSION['data'] ?></h5>
 </div>
-<form action="../controller/controlador_candidato.php?acao=editar_candidato&id=<?=$id?>" method="POST">
+<form action="../../controller/controlador_empresa.php?acao=editar_empresa&id=<?=$id?>" method="POST">
   <input type="text" name="id">
   <input type="submit" name="">
 </form>
@@ -100,7 +112,7 @@ session_start();
 </ul>
 </div>
 
-<?php include '../../assets/rodape.html'; ?>
+<?php include '../../../assets/rodape.l'; ?>
 
 
 
