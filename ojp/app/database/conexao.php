@@ -3,7 +3,7 @@
 class Conexao {
 
     const HOST      = "localhost";
-    const NOMEBANCO = "ojp";
+    const NOMEBANCO = "ojp2";
     const USUARIO   = "root";
     const SENHA     = "";
     

@@ -27,11 +27,11 @@
         <div class="row container">
           <div class="col s12">
             <div class="card N/A transparent">
-              <form class="col s12" method="POST" action="../controller/controlador_vaga.php?acao=cadastrar_vaga">
+              <form class="col s12" method="POST" action="../controller/controlador_vaga.php?acao=editar2_vaga&id=<?=$id_vaga?>">
                 <h1 class="white-text"><i class="material-icons prefix large white-text">assignment</i>Vaga</h1>
                 <h3 class="white-text">Preencha o formulário abaixo para  cadastrar a vaga</h3>
                 <div class="input-field inline col s6">
-                  <input  id="first_name" type="text" class="validate white-text" name="nome">
+                  <input  id="first_name" type="text" class="validate white-text" name="nome" value="<?=$lista_vaga['nome']?>">
                   <label for="first_name" class="white-text">Nome da vaga</label>
                 </div>
                 <div class="input-field col s6">
@@ -40,25 +40,24 @@
                     <option value="" class="white-text"
              >Area da vaga</option>
 
-                    <option value="1">Agropecuária</option> 
-                    <!-- <option value="m">Mecânica</option>  -->
-                    <option value="2">Informática</option>
-                    <option value="3">Química</option>  
-                    <!-- <option value="s">Serviços</option>  -->
-                    <!-- <option value="i">Industrial</option> -->
-                    <!-- <option value="i">Comercial</option> -->
+                    <option value="a">Agropecuária</option> 
+                    <option value="m">Mecânica</option> 
+                    <option value="t">T.I</option> 
+                    <option value="s">Serviços</option> 
+                    <option value="i">Industrial</option>
+                    <option value="i">Comercial</option>
                   </select>
                 </div>
                 <div class="input-field col s6">
-                  <input  id="first_name" type="text" class="validate white-text" name="quantidade">
+                  <input  id="first_name" type="text" class="validate white-text" name="quantidade" value="<?=$lista_vaga['quantidade']?>">
                   <label for="first_name" class="white-text">Quantidade da vaga</label>
                 </div>
                 <div class="input-field col s3">
-                  <input type="text" class="dataIniFim white-text" name="data_f_inscricao">
+                  <input type="text" class="datepicker white-text" name="data_f_inscricao" value="<?=$lista_vaga['data_f_inscricao']?>">
                   <label for="last_name" class="white-text">Data Final para inscrição</label>
                 </div>
                 <div class="input-field col s3">
-                  <input type="text" class="dataIniFim white-text" name="data_f_resposta">
+                  <input type="text" class="datepicker white-text" name="data_f_resposta" value="<?=$lista_vaga['data_f_resposta']?>">
                   <label for="first_name" class="white-text">Data Final para resposta</label>
                 </div>
                 <div class=" col s12 center">
@@ -81,26 +80,26 @@
 
                 </div>
             <div class="input-field col s12">
-            <textarea id="textarea1" class="materialize-textarea white-text" name="desc_vaga"></textarea>
+            <textarea id="textarea1" class="materialize-textarea white-text" name="desc_vaga" value="<?=$lista_vaga['descricao']?>"></textarea>
             <label for="textarea1" class="white-text">Descrição da vaga</label>
           </div>
           <div class="input-field col s6">
-            <textarea id="textarea1" class="materialize-textarea white-text" name="desc_formacao"></textarea>
+            <textarea id="textarea1" class="materialize-textarea white-text" name="desc_formacao" value="<?=$lista_vaga['desc_formacao']?>"></textarea>
             <label for="textarea1" class="white-text">Formação necessária</label>
           </div>
           <div class="input-field col s6">
-            <textarea id="textarea1" class="materialize-textarea white-text" name="desc_experiencia"></textarea>
+            <textarea id="textarea1" class="materialize-textarea white-text" name="desc_experiencia" value="<?=$lista_vaga['desc_experiencia']?>"></textarea>
             <label for="textarea1" class="white-text">Experiência necessária</label>
           </div>
           <div class="input-field col s12">
             <h3 class="white-text">Contato para a vaga</h3>
           </div>
                 <div class="input-field col s6">
-                  <input  id="first_name" type="text" class="validate white-text" name="telefone">
+                  <input  id="first_name" type="text" class="validate white-text" name="telefone" value="<?=$lista_vaga['tel_1']?>">
                   <label for="first_name" class="white-text">telefone</label>
                 </div>
                   <div class="input-field col s6">
-                  <input  id="first_name" type="email" class="validate white-text" name="email">
+                  <input  id="first_name" type="email" class="validate white-text" name="email" value="<?=$lista_vaga['email']?>">
                   <label for="first_name" class="white-text">email</label>
                 </div>
               
@@ -112,32 +111,14 @@
             </div>
           </div>
         </div>
-        <script>$('.dataIniFim').pickadate({
-  selectMonths: true,
-  selectYears: 15,
-  // Título dos botões de navegação
-  labelMonthNext: 'Próximo Mês',
-  labelMonthPrev: 'Mês Anterior',
-  // Título dos seletores de mês e ano
-  labelMonthSelect: 'Selecione o Mês',
-  labelYearSelect: 'Selecione o Ano',
-  // Meses e dias da semana
-  monthsFull: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-  monthsShort: ['Jan', 'Fev', 'Mar', 'Abr', 'Mai', 'Jun', 'Jul', 'Ago', 'Set', 'Out', 'Nov', 'Dez'],
-  weekdaysFull: ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'],
-  weekdaysShort: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sab'],
-  // Letras da semana
-  weekdaysLetter: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],
-  //Botões
-  today: 'Hoje',
-  clear: 'Limpar',
-  close: 'Ok',
-  // Formato da data que aparece no input
-  format: 'dd/mm/yyyy',
-  onClose: function() {
-    $(document.activeElement).blur()
-  }
-});
+        <script>$('.datepicker').pickadate({
+      selectMonths: true, // Creates a dropdown to control month
+      selectYears: 15, // Creates a dropdown of 15 years to control year,
+      today: 'Today',
+      clear: 'Clear',
+      close: 'Ok',
+      closeOnSelect: false // Close upon selecting a date,
+    });
    $(document).ready(function() {
       $('select').material_select();
     });</script>

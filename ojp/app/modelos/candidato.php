@@ -1,5 +1,6 @@
 <?php
 	class Candidato {
+		
 		public $nome	;
 		public $data	;
 		public $rg		;
@@ -20,7 +21,7 @@
 		public $carteira;
 		public $id	    ;
 
-		function __construct($nome,$data,$rg,$cpf,$tel_1,$tel_2,$cidade,$bairro,$rua,$numero,$cep,$email,$img,$login,$senha,$periodo,$anexo,$carteira, $id = null)
+		function __construct($nome,$data,$rg,$cpf,$tel_1,$tel_2,$cidade,$bairro,$rua,$numero,$cep,$email,$login,$senha,$periodo,$carteira, $id = null)
 		{
 			$this->nome     	= $nome		;
 			$this->data     	= $data		;
@@ -34,11 +35,9 @@
 			$this->numero     	= $numero	;
 			$this->cep     		= $cep		;
 			$this->email     	= $email	;
-			$this->img     		= $img		;
 			$this->login     	= $login	;
 			$this->senha     	= $senha	;
 			$this->periodo     	= $periodo	;
-			$this->anexo     	= $anexo	;
 			$this->carteira     = $carteira	;
 			$this->id     		= $id		;
 		}
@@ -50,4 +49,11 @@
         	$this->id = $id;
     	}
 
+    	public function setImage($img){
+			$this->img = $img;
+    	}
+
+    	public function setAnexo($anexo){
+			$this->anexo = $anexo;
+    	}
 	}

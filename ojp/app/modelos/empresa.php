@@ -21,7 +21,7 @@
 		public $senha	;
 		public $id	    ;
 
-		function __construct($nome,$data,$RG,$CPF,$telefone,$email,$nome_emp,$CNPJ,$razao,$area,$cidade,$bairro,$rua,$numero,$cep,$email_ep,$imagem,$login,$senha,$id = null)
+		function __construct($nome,$data,$RG,$CPF,$telefone,$email,$nome_emp,$CNPJ,$razao,$area,$cidade,$bairro,$rua,$numero,$cep,$email_ep,$login,$senha,$id = null)
 		{
 			$this->nome = $nome;
 			$this->data = $data;
@@ -39,7 +39,6 @@
 			$this->numero = $numero;
 			$this->cep = $cep;
 			$this->email_ep = $email_ep;
-			$this->imagem = $imagem;
 			$this->login = $login;
 			$this->senha = $senha;
 			$this->id = $id;
@@ -51,5 +50,7 @@
     	public function setId($id){
         	$this->id = $id;
     	}
-
+    	public function setImage($img){
+			$this->img = $imagem;
+    	}
 	}

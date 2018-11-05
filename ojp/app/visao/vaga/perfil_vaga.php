@@ -1,31 +1,12 @@
-  <?php 
-  $id = $_SESSION['id_empregador'];
-// var_dump($_SESSION);
-// var_dump($empresa_banco);
-    ?>
-    <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
           	<style type="text/css">
         		.parallax-container {
        	 		height: 600px;
       		}
-          
-         body {
+          body {
               background-image: url("../../assets/image/fundo3.jpg");
-              background-attachment: fixed;
           }
         	</style>
-          <?php
-   if (isset($_SESSION['alerta'])) : ?>
-  <?php if (empty($_SESSION['nome'])) : ?> 
-    <script>  alert("<?= $_SESSION['alerta']?>");
-    </script>
-  <?php else :?>      
-    <script>  alert("<?= $_SESSION['nome'] . $_SESSION['alerta']?>");
-    </script>
-  <?php endif; endif;
-  $_SESSION['nome'] = null;
-  $_SESSION['alerta'] = null;
-  ?>
   </head>
   <body>
   	<ul id="dropdown1" class="dropdown-content">
@@ -37,7 +18,7 @@
   	<div class="navbar-fixed">
     <nav class="blue-grey nav-wrapper" role="navigation">
       <div class="nav-wrapper container ">
-        <a href= "../visao/admin/listar_candidatos.php"><i class="material-icons prefix left">arrow_back</i>Voltar</a>
+        <a href= "../controller/controlador_candidato.php?acao=listar_vagas"><i class="material-icons prefix left">arrow_back</i>Voltar</a>
         <a id="logo-container" href="index.html" class="brand-logo center white-text">OJP</a>
         <ul class="right hide-on-med-and-down">
   		<li><a href="#"></a></li>
@@ -71,35 +52,50 @@
     <div class="card">
       <div class="card-content">
         <div class="row">
-          <div class="col s2">
-            <img src="../visao/admin/img_empresa/<?= $_SESSION['imagem'];?>" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+          
+  <div class="col s11">
 
-  </div>
-      <div class="col s9">
-        <h1><?= $_SESSION['nome_empresa'] ?></h1>
-      </div>
-      <div class="col s1">
-      <form action="../controller/controlador_empresa.php?acao=editar_empresa&id=<?=$id?>" method="POST">
+  <h1><?= $lista_vaga['nome'] ?></h1>
+    </div>
+    <div class="col s1">
+      <form action="../controller/controlador_vaga.php?acao=editar_vaga&id=<?=$id_vaga?>" method="POST">
         <button class="btn-floating btn-large waves-effect waves-light red tooltipped" data-position="right" data-tooltip="Editar" type="submit"><i class="material-icons" >edit</i></button>
       </form>
       <br>
-      <form action="../controller/controlador_empresa.php?acao=excluir_empresa&id=<?=$id?>" method="POST">
+      <form action="../controller/controlador_vaga.php?acao=excluir_vaga&id=<?=$id_vaga?>" method="POST">
         <button class="btn-floating btn-large waves-effect waves-light red tooltipped" data-position="right" data-tooltip="Excluir" type="submit"><i class="material-icons" >delete</i></button>
       </form>
     </div>
   </div>
     <hr>
-    <h3>Dados Empresariais</h3>
-    <h5>Razão Social: <?= $_SESSION['razao_social'] ?></h5>
-    <h5>E-mail: <?= $_SESSION['email_empresa'] ?></h5>
-    <h5>Telefone: <?= $_SESSION['telefone'] ?></h5>
-    <h5>Data de nascimento: <?=  $_SESSION['data'] ?></h5>
+    <h3>Sobre a Vaga</h3>
+    
+    <h5>Descrição: <?= $lista_vaga['descricao'] ?></h5>
+
   </div>
-  <!--<form action="../controller/controlador_empresa.php?acao=editar_empresa&id=<?=$id?>" method="POST">
+  <!--<form action="../controller/controlador_candidato.php?acao=editar_candidato&id=<?=$id?>" method="POST">
     <input type="text" name="id">
     <input type="submit" name="">
   </form>!-->
   </div>
+    <ul class="collapsible white" data-collapsible="accordion">
+    <li>
+      <div class="collapsible-header">
+        Formação Necessária
+        <span class="badge"></span></div>
+      <div class="collapsible-body"><p><?=$lista_vaga['desc_formacao'] ?>
+  </p>
+  </div>
+    </li>
+    <li>
+      <div class="collapsible-header">
+        Contato
+        <span class="badge"></span></div>
+      <div class="collapsible-body"><p><?=$lista_vaga['tel_1'] ?>
+  </p> <p><?=$lista_vaga['email'] ?>
+  </p></div>
+    </li>
+  </ul>
   </div>
 
   <?php include '../../assets/rodape.html'; ?>
@@ -110,6 +106,18 @@
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="../../assets/js/materialize.js"></script>
     <script src="../../assets/js/init.js"></script>
-    <script type="text/javascript"></script>
+    <script type="text/javascript">
+    
+      document.addEventListener('DOMContentLoaded', function() {
+      var elems = document.querySelectorAll('.tooltipped');
+      var instances = M.Tooltip.init(elems, options);
+    });
+
+    // Or with jQuery
+
+    $(document).ready(function(){
+      $('.tooltipped').tooltip();
+    });
+    </script>
     </body>
   </html>
